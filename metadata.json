@@ -1,0 +1,6 @@
+{
+  "name": "HeyLink Studio - Link in Bio SaaS",
+  "description": "Production-ready, full-stack HeyLink-style link-in-bio SaaS platform with custom themes, live phone preview, QR code generator, Supabase database, and analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
