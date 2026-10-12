@@ -167,6 +167,67 @@ export const SettingsView: React.FC = () => {
         </div>
       </div>
 
+      {/* Vercel Production Deployment & Edge Optimizations */}
+      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-2xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+            <Server className="w-4 h-4 text-purple-600" />
+            Vercel Deployment & Edge Optimizations
+          </h3>
+
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200">
+            <Sparkles className="w-3 h-3 text-purple-600" />
+            Vercel Ready
+          </span>
+        </div>
+
+        <p className="text-xs text-slate-600 leading-relaxed">
+          Pre-configured with <code className="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-purple-700 font-semibold">vercel.json</code> rewrites, 1-year immutable Edge CDN caching (<code className="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-[11px]">max-age=31536000</code>), modular vendor chunk splitting, and security headers.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200/80">
+            <p className="text-xs font-bold text-slate-800 mb-1 flex items-center gap-1.5">
+              <Key className="w-3.5 h-3.5 text-purple-600" />
+              Required Vercel Env Vars
+            </p>
+            <div className="space-y-1 text-[11px] font-mono text-slate-600">
+              <p>• VITE_SUPABASE_URL</p>
+              <p>• VITE_SUPABASE_ANON_KEY</p>
+              <p>• VITE_APP_URL</p>
+            </div>
+          </div>
+
+          <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200/80">
+            <p className="text-xs font-bold text-slate-800 mb-1 flex items-center gap-1.5">
+              <Globe className="w-3.5 h-3.5 text-emerald-600" />
+              Build & Cache Config
+            </p>
+            <div className="space-y-1 text-[11px] font-mono text-slate-600">
+              <p>• Framework: Vite (auto-detected)</p>
+              <p>• Command: npm run build</p>
+              <p>• Edge CDN: Immutable Cache Active</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <div className="flex-1 min-w-[220px] p-2 bg-slate-900 text-white rounded-xl font-mono text-xs flex items-center justify-between">
+            <span className="truncate">vercel --prod</span>
+            <button
+              type="button"
+              onClick={() => {
+                navigator.clipboard.writeText('vercel --prod');
+              }}
+              className="text-[10px] bg-slate-800 hover:bg-slate-700 px-2 py-1 rounded text-purple-300 ml-2 shrink-0"
+              title="Copy deploy command"
+            >
+              Copy CLI
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Backup, Export & Restore */}
       <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-2xs space-y-4">
         <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
